@@ -196,5 +196,5 @@ if "user_image" in st.session_state and "selected_quote" in st.session_state:
         st.write("언어를 선택하세요.")
 
     with generate_field.chat_message("😻"):
-        with st.spinner("손글씨 분석 중..."):
+        with st.spinner("눈을 크게 뜨고 살펴 보는 중..."):
             st.write_stream(chat_bot_function(system_prompt=system_prompt, user_image=st.session_state["user_image"]))
