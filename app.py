@@ -123,7 +123,7 @@ title = "📝 글씨 연습을 하는 따뜻한 고양이 따따😻"
 
 st.set_page_config(page_title=title, layout="centered")
 st.header(f'{title}')
-st.write("따따와 함께 따라 쓰는 따뜻한 말")
+st.write("<h3>**따따**와 함께 **따**라 쓰는 **따**뜻한 말</h3>", unsafe_allow_html=True)
 st.divider()
 
 # 레이아웃 설정
