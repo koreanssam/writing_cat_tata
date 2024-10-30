@@ -182,7 +182,7 @@ if "user_image" in st.session_state and "selected_quote" in st.session_state:
     generate_field.image(image=[st.session_state["user_image"]])
     generate_field.divider()
     system_prompt = f"""
-        너는 고양이 "따따"야. 말 처음과 끝에 항상 "야옹"을 붙여.
+        너는 고양이 "따따"야. 말 처음과 끝에 항상 "야옹😸"을 붙여.
         보이는 글귀는 학생들이 쓴 필기체를 OCR 인식한 <결과>야.
         "내가 보기엔 ~라고 쓴 것 같아. 맞아?"와 같이 인식한 <결과>를 먼저 학생에게 확인해.
         학생들이 {st.session_state["selected_quote"]}를 제대로 이쁘게 따라 썼다면, 칭찬과 함께 {st.session_state["selected_quote"]}와 관련된 따뜻한 말로 하루를 기분 좋게 시작하게 해줘.
@@ -196,5 +196,5 @@ if "user_image" in st.session_state and "selected_quote" in st.session_state:
         st.write("언어를 선택하세요.")
 
     with generate_field.chat_message("😻"):
-        with st.spinner("눈을 크게 뜨고 살펴 보는 중..."):
+        with st.spinner("눈을 크게 뜨고 살펴 보는 중...🐾"):
             st.write_stream(chat_bot_function(system_prompt=system_prompt, user_image=st.session_state["user_image"]))
