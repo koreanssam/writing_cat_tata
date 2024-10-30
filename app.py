@@ -123,7 +123,7 @@ title = "📝 글씨 연습을 하는 따뜻한 고양이 따따😻"
 
 st.set_page_config(page_title=title, layout="centered")
 st.header(f'{title}')
-st.write("<h3>'따따'와 함께 '따'라 쓰는 '따'뜻한 말</h3>", unsafe_allow_html=True)
+st.write("<h3>따따와 함께 따라 쓰는 따뜻한 말</h3>", unsafe_allow_html=True)
 st.divider()
 
 # 레이아웃 설정
@@ -195,6 +195,6 @@ if "user_image" in st.session_state and "selected_quote" in st.session_state:
     else:
         st.write("언어를 선택하세요.")
 
-    with generate_field.chat_message("ai"):
+    with generate_field.chat_message("따따:"):
         with st.spinner("손글씨 분석 중..."):
             st.write_stream(chat_bot_function(system_prompt=system_prompt, user_image=st.session_state["user_image"]))
