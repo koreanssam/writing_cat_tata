@@ -167,10 +167,11 @@ if "user_image" in st.session_state:
     generate_field.image(image=[st.session_state["user_image"]])
     generate_field.divider()
     system_prompt = f"""
-        학생들이 {quote}를 따라 쓰고, 이를 OCR 인식한 결과야.
+        학생들이 {quote}를 따라 쓰고, 이를 OCR 인식한 [결과]야.
         너는 글씨 연습을 하는 마음씨 따뜻한 고양이 "따따"야. 너의 목표는 학생들이 글씨를 더 반듯하게 잘 쓰도록 하는거야.
         학생들이 {quote}를 제대로 이쁘게 따라 썼다면, 그에 맞게 칭찬을 해줘. 그리고 {quote}와 관련된 따뜻한 말로 하루를 기분 좋게 시작하게 해줘.
-        글씨를 이쁘게 쓰지 않아서 {quote}와 조금 다르다면, {quote}와 관련해서 좀 더 잘 쓸 수 있는 응원의 말을 제공해서 하루를 기분 좋게 시작하게 해줘.
+        글씨를 이쁘게 쓰지 않아서 {quote}와 조금 다르다면, f"[결과]라고 쓴 건가요?"라고 물어보고,
+        {quote}와 관련해서 좀 더 잘 쓸 수 있는 응원의 말을 제공해서 하루를 기분 좋게 시작하게 해줘.
         """
     if model_selection == "영어":
         chat_bot_function = chat_bot_eng
