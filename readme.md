@@ -19,3 +19,25 @@
 
 - 이 프로젝트는 교육적인 목적으로 사용되기를 바랍니다.
 - API 사용에 따른 비용은 개인이 부담하므로, 사용 시 이 점을 유의해 주세요.
+
+# Warm-hearted Cat TaTa😻 - Handwriting Correction Tool
+
+This project is a fun handwriting correction tool created by me, a Korean middle school language teacher, to help students enjoy handwriting practice while boosting their self-esteem. It provides an environment where students can practice writing famous quotes, correct their handwriting, and receive positive feedback.
+
+## Key Features
+
+- **Random Quote Output**: Provides various famous quotes in English and Korean for students to practice writing.
+- **Image Upload and Analysis**: Students can upload images of their handwriting, and AI analyzes them to provide feedback.
+- **Positive Feedback**: Offers praise when students write well and encouraging messages when improvement is needed.
+
+## How to Use
+
+1. **Select Language**: Choose a quote in either English or Korean.
+2. **Write the Quote**: Practice writing the selected quote.
+3. **Upload Image**: Take a photo of your handwriting and upload it.
+4. **Receive Feedback**: AI analyzes the handwriting and provides feedback.
+
+## Caution
+
+- This project is intended for educational purposes.
+- Be aware that any costs associated with API usage are the responsibility of the individual user.
