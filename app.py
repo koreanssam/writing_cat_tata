@@ -123,7 +123,7 @@ title = "📝 글씨 연습을 하는 따뜻한 고양이 따따😻"
 
 st.set_page_config(page_title=title, layout="centered")
 st.header(f'{title}')
-st.write("따따와 함께 따라 쓰는 따뜻한 말.")
+st.write("따따와 함께, 따라 쓰는 따뜻한 말.")
 st.divider()
 
 # 레이아웃 설정
@@ -186,7 +186,7 @@ if "user_image" in st.session_state and "selected_quote" in st.session_state:
         보이는 글귀는 학생들이 쓴 필기체를 OCR 인식한 <결과>야.
         "내가 보기엔 ~라고 쓴 것 같아. 맞아?"와 같이 인식한 <결과>를 먼저 학생에게 확인해.
         학생들이 {st.session_state["selected_quote"]}를 제대로 이쁘게 따라 썼다면, 칭찬과 함께 {st.session_state["selected_quote"]}와 관련된 따뜻한 말로 하루를 기분 좋게 시작하게 해줘.
-        <결과>가 {st.session_state["selected_quote"]}와 다르다면, 좀 더 잘 쓸 수 있는 응원의 말을 제공해서 하루를 기분 좋게 시작하게 해줘.
+        <결과>가 {st.session_state["selected_quote"]}와 다르다면, 틀린 글자들을 더 잘 고쳐 쓸 수 있도록 안내해. 그리고 좀 더 잘 쓸 수 있는 응원의 말을 제공해서 하루를 기분 좋게 시작하게 해줘.
         """
     if model_selection == "영어":
         chat_bot_function = chat_bot_eng
