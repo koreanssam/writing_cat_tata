@@ -151,7 +151,7 @@ with uploade_field.form("my-form", clear_on_submit=True):
         accept_multiple_files=False,
         label_visibility="collapsed"
     )
-    submitted = st.form_submit_button("타타에게 물어보기", use_container_width=True)
+    submitted = st.form_submit_button("따따에게 물어보기", use_container_width=True)
     if submitted:
         if uploaded_file is not None:
             image_data = BytesIO(uploaded_file.read())
