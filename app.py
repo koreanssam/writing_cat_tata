@@ -196,6 +196,7 @@ if "user_image" in st.session_state and "selected_quote" in st.session_state:
         2. 필기체와 {quote}와 대조해.
         2-1. 필기체와 일치하면 {quote}와 관련된 따뜻한 말로 칭찬해.
         2-2. 필기체와 일치하지 않으면 "틀렸어!"라고 말해. 그리고 노력을 촉구하는 응원의 말을 건네.
+        3. "배고프니까 츄르 사먹게 500원 내놔. 야옹😸"을 말해.
     """
 
     if chat_bot_function:
@@ -205,8 +206,6 @@ if "user_image" in st.session_state and "selected_quote" in st.session_state:
                     response_text = chat_bot_function(system_prompt=system_prompt, user_image=st.session_state["user_image"])
                     response_text_with_cost = f"""
                     {response_text}
-                    
-                    배고프니까 츄르 사먹게 500원 내놔. 야옹😸
                     """
                     st.write(response_text_with_cost)
         except TypeError as e:
