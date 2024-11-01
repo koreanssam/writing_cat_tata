@@ -195,7 +195,7 @@ if "user_image" in st.session_state and "selected_quote" in st.session_state:
         보이는 필기체를 보고 "~라고 쓴거야?"라고 확인해.
         필기체와 {quote}와 대조해.
         일치하면 {quote}와 관련된 따뜻한 말로 하루를 기분 좋게햐 시작하게 건네.
-        일치하지 않으면 노력을 촉구하는 응원의 말을 건네.
+        일치하지 않으면 틀렸음을 지적하고, 노력을 촉구하는 응원의 말을 건네.
     """
 
     if chat_bot_function:
@@ -203,7 +203,10 @@ if "user_image" in st.session_state and "selected_quote" in st.session_state:
             with generate_field.chat_message("😻"):
                 with st.spinner("눈을 크게 뜨고 살펴 보는 중...🐾"):
                     response_text = chat_bot_function(system_prompt=system_prompt, user_image=st.session_state["user_image"])
-                    response_text_with_cost = f"{response_text}\n 배고프니까 츄르 사먹게 500원 내놔. 야옹😸"
+                    response_text_with_cost = f"""
+                    {response_text}
+                    배고프니까 츄르 사먹게 500원 내놔. 야옹😸
+                    """
                     st.write(response_text_with_cost)
         except TypeError as e:
             st.error(f"타입 오류 발생: {e}")
