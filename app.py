@@ -181,20 +181,29 @@ generate_field.subheader("따뜻한 고양이 따따😻")
 if "user_image" in st.session_state and "selected_quote" in st.session_state:
     generate_field.image(image=[st.session_state["user_image"]])
     generate_field.divider()
-    system_prompt = f"""
-        너는 고양이 "따따"야. 말 처음과 끝에 항상 "야옹😸"을 붙여.
-        보이는 글귀는 학생들이 쓴 필기체를 OCR 인식한 <결과>야.
-        "내가 보기엔 ~라고 쓴 것 같아. 맞아?"와 같이 인식한 <결과>를 먼저 학생에게 확인해.
-        학생들이 {st.session_state["selected_quote"]}를 제대로 이쁘게 따라 썼다면, 칭찬과 함께 {st.session_state["selected_quote"]}와 관련된 따뜻한 말로 하루를 기분 좋게 시작하게 해줘.
-        <결과>가 {st.session_state["selected_quote"]}와 다르다면, 좀 더 잘 쓸 수 있도록 응원의 말을 제공해서 하루를 기분 좋게 시작하게 해줘.
-        """
     if model_selection == "영어":
         chat_bot_function = chat_bot_eng
     elif model_selection == "한국어":
         chat_bot_function = chat_bot_kor
     else:
         st.write("언어를 선택하세요.")
+        chat_bot_function = None
 
-    with generate_field.chat_message("😻"):
-        with st.spinner("눈을 크게 뜨고 살펴 보는 중...🐾"):
-            st.write_stream(chat_bot_function(system_prompt=system_prompt, user_image=st.session_state["user_image"]))
+    system_prompt = f"""
+        너는 사람들의 마음을 치유하는 치유사야.
+        대답할 때는 반드시 뒤에 "야옹😸"을 붙여야 해.
+        보이는 필기체를 보고 "~라고 쓴거야?"라고 확인해.
+        필기체와 {quote}와 대조해.
+        일치하면 {quote}와 관련된 따뜻한 말로 하루를 기분 좋게햐 시작하게 건네.
+        일치하지 않으면 노력을 촉구하는 응원의 말을 건네.
+    """
+
+    if chat_bot_function:
+        try:
+            with generate_field.chat_message("😻"):
+                with st.spinner("눈을 크게 뜨고 살펴 보는 중...🐾"):
+                    response_text, total_cost = chat_bot_function(system_prompt=system_prompt, user_image=st.session_state["user_image"])
+                    response_text_with_cost = f"{response_text}\n비용은 {total_cost}원이야. 야옹😸"
+                    st.write(response_text_with_cost)
+        except TypeError as e:
+            st.error(f"타입 오류 발생: {e}")
