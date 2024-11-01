@@ -96,6 +96,8 @@ all_quotes_ko = [
 ]
 
 # 명대사 출력
+def random_quote_en():
+    return random.choice(all_quotes_en)
 def random_quote_ko():
     return random.choice(all_quotes_ko)
 
