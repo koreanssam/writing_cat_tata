@@ -1,11 +1,11 @@
 import streamlit as st
-from functions import chat_bot_eng, chat_bot_kor
+from functions import chat_bot_eng
 from io import BytesIO
 import base64
 from PIL import Image
 import random
 
-# 영어로 번역된 명대사 리스트
+# 영어 명대사
 all_quotes_en = [
     "If you change your mind, you might turn into a complete fool. Are you really okay with that?",
     "Friendship is more precious than knowledge. I like fools.",
@@ -58,11 +58,11 @@ all_quotes_en = [
     "Sometimes the things that take up the most room in your heart are the smallest things."
 ]
 
-# 랜덤으로 명대사 출력하기
+# 명대사 출력
 def random_quote_en():
     return random.choice(all_quotes_en)
 
-# 전체 명대사 리스트 (한국어)
+# 한국어 명대사
 all_quotes_ko = [
     "머리를 바꾸면 완전히 바보로 되는데 너 정말 괜찮겠니?",
     "지식보다 더 소중한 건 우리 우정이야. 난 바보가 좋아",
@@ -115,7 +115,7 @@ all_quotes_ko = [
     "가끔은 마음에서 가장 많은 공간을 차지하는 것들이 가장 작은 것들일 때가 있어"
 ]
 
-# 랜덤으로 명대사 출력하기
+# 명대사 출력
 def random_quote_ko():
     return random.choice(all_quotes_ko)
 
@@ -169,7 +169,7 @@ with uploade_field.form("my-form", clear_on_submit=True):
         accept_multiple_files=False,
         label_visibility="collapsed"
     )
-    submitted = st.form_submit_button("전송", use_container_width=True)
+    submitted = st.form_submit_button("타타에게 물어보기", use_container_width=True)
     if submitted:
         if uploaded_file is not None:
             image_data = BytesIO(uploaded_file.read())
@@ -182,9 +182,7 @@ if "user_image" in st.session_state and "selected_quote" in st.session_state:
     generate_field.image(image=[st.session_state["user_image"]])
     generate_field.divider()
 
-    if model_selection == "영어":
-        chat_bot_function = chat_bot_eng
-    elif model_selection == "한국어":
+    if model_selection == "영어" or "한국어":
         chat_bot_function = chat_bot_eng
     else:
         st.write("언어를 선택하세요.")
