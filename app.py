@@ -1,5 +1,5 @@
 import streamlit as st
-from functions import chat_bot_eng, chat_bot_kor
+from functions import chat_bot_eng
 from io import BytesIO
 import base64
 from PIL import Image
