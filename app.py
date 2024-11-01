@@ -194,7 +194,7 @@ if "user_image" in st.session_state and "selected_quote" in st.session_state:
         너는 사람들의 마음을 치유하는 치유사야.
         대답할 때는 반드시 뒤에 "야옹😸"을 붙여야 해.
         보이는 필기체를 보고 "~라고 쓴거야?"라고 확인해.
-        필기체와 {quote}와 대조해.
+        필기체{quote}와 대조해.
         일치하면 {quote}와 관련된 따뜻한 말로 하루를 기분 좋게 시작하게 건네.
         일치하지 않으면 노력을 촉구하는 응원의 말을 건네.
     """
