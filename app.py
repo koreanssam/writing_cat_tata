@@ -206,7 +206,6 @@ if "user_image" in st.session_state and "selected_quote" in st.session_state:
                     response_text_with_cost = f"""
                     {response_text}
                     
-                    
                     배고프니까 츄르 사먹게 500원 내놔. 야옹😸
                     """
                     st.write(response_text_with_cost)
