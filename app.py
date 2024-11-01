@@ -185,7 +185,7 @@ if "user_image" in st.session_state and "selected_quote" in st.session_state:
     if model_selection == "영어":
         chat_bot_function = chat_bot_eng
     elif model_selection == "한국어":
-        chat_bot_function = chat_bot_kor
+        chat_bot_function = chat_bot_eng
     else:
         st.write("언어를 선택하세요.")
         chat_bot_function = None
