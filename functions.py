@@ -19,17 +19,17 @@ def chat_bot_eng(system_prompt, user_image):
     chain = llm | output_parsers.StrOutputParser()
     return chain.invoke([context])
 
-# def chat_bot_kor(system_prompt, user_image):
-#     context = HumanMessage(content=[
-#         {
-#             "type": "text",
-#             "text": system_prompt,
-#         },
-#         {
-#             'type': 'image_url',
-#             'image_url': {"url": user_image}
-#         }
-#     ])
-#     llm = ChatOpenAI(model=st.secrets["gpt_model"], api_key=st.secrets["gpt_api_key"])
-#     chain = llm | output_parsers.StrOutputParser()
-#     return chain.invoke([context])
+def chat_bot_kor(system_prompt, user_image):
+    context = HumanMessage(content=[
+        {
+            "type": "text",
+            "text": system_prompt,
+        },
+        {
+            'type': 'image_url',
+            'image_url': {"url": user_image}
+        }
+    ])
+    llm = ChatOpenAI(model=st.secrets["gpt_model"], api_key=st.secrets["gpt_api_key"])
+    chain = llm | output_parsers.StrOutputParser()
+    return chain.invoke([context])
