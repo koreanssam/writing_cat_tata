@@ -202,7 +202,7 @@ if "user_image" in st.session_state and "selected_quote" in st.session_state:
         try:
             with generate_field.chat_message("😻"):
                 with st.spinner("눈을 크게 뜨고 살펴 보는 중...🐾"):
-                    response_text, total_cost = chat_bot_function(system_prompt=system_prompt, user_image=st.session_state["user_image"])
+                    response_text = chat_bot_function(system_prompt=system_prompt, user_image=st.session_state["user_image"])
                     response_text_with_cost = f"{response_text}\n 배고프니까 츄르 사먹게 500원 내놔. 야옹😸"
                     st.write(response_text_with_cost)
         except TypeError as e:
