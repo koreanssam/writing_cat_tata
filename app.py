@@ -164,9 +164,7 @@ if "user_image" in st.session_state and "selected_quote" in st.session_state:
     generate_field.image(image=[st.session_state["user_image"]])
     generate_field.divider()
 
-    if model_selection == "영어":
-        chat_bot_function = chat_bot_kor
-    elif model_selection == "한국어":
+    if model_selection == "영어" or "한국어":
         chat_bot_function = chat_bot_eng
     else:
         st.write("언어를 선택하세요.")
